@@ -31,8 +31,10 @@ public class Game {
     @NotNull
     String hiddenWord;
 
-    @Transient
-    List<String> usedLetters = new ArrayList<>();
+    @NotNull
+    String usedLetters;
+
+
 
     @PostLoad
     public void handleNull() {
