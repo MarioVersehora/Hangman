@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +23,7 @@ public class GameService {
         boolean useNumbers = true;
         String generatedKey = RandomStringUtils.random(length, useLetters, useNumbers);
 
+        generatedKey = generatedKey.toLowerCase(Locale.ROOT);
         String shownWord = "";
         for (int i = 0; i < hiddenWord.length(); i++) {
             shownWord = shownWord.concat("*");
